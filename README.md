@@ -1,4 +1,4 @@
-# Commit Message Standards
+# Conventional Commits Pattern
 
 ⠀
 ⠀
