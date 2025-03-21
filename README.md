@@ -1,4 +1,4 @@
-# Conventional Commits Pattern
+# 📖 Guide: Conventional Commits
 
 The repository provides a structured approach to implementing and adhering to the Conventional Commits specification in software development projects. This pattern emphasizes clear, consistent, and meaningful commit messages, which improve collaboration, versioning, and changelog generation.
 ⠀
