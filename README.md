@@ -1,9 +1,11 @@
 # 📖 Guide: Conventional Commits
 
+## 🔹 Introduction
 The repository provides a structured approach to implementing and adhering to the Conventional Commits specification in software development projects. This pattern emphasizes clear, consistent, and meaningful commit messages, which improve collaboration, versioning, and changelog generation.
 ⠀
+---
 ⠀
-## Why This Format?
+## 🔹 Why This Format?
 Adopting a standardized format for commit messages:
 
 ✅ Enables automated changelog generation
@@ -20,7 +22,7 @@ Adopting a standardized format for commit messages:
 ⠀
 ⠀
 ⠀
-## 💡 Best Practice Checklist
+## 🔹 Best Practice Checklist
 
 ✅ Use imperative mood ("Add feature" not "Added feature")
 
@@ -40,7 +42,7 @@ Adopting a standardized format for commit messages:
 ⠀
 ⠀
 ⠀
-## Commit Structure
+## 🔹 Commit Structure
 ```text
 <type>(<scope>): <short description>
 
@@ -51,7 +53,7 @@ Adopting a standardized format for commit messages:
 ⠀
 ⠀
 ⠀
-## Key Component
+## 🔹 Key Component
 
 
 | Element          | Required | Description                                                                 |
@@ -65,7 +67,7 @@ Adopting a standardized format for commit messages:
 ⠀
 ⠀
 ⠀
-## Valid Change Types
+## 🔹 Valid Change Types
 
 
 | **Type**   | **Use Case**                          |
@@ -90,7 +92,7 @@ Adopting a standardized format for commit messages:
 ⠀
 ⠀
 ⠀
-## Practical Examples
+## 🔹 Practical Examples
 
 #### Feature implementation:
 ```git
@@ -113,13 +115,13 @@ Issue: #456
 
 
 
-## References
+## 🔹 References
 
 - https://www.conventionalcommits.org/
 - https://seesparkbox.com/foundry/semantic_commit_messages
 - http://karma-runner.github.io/1.0/dev/git-commit-msg.html 
 
 
-## License
+## 🔹 License
 
 This repository is licensed. This means you are free to share and adapt this content for any purpose, even commercially, as long as you provide appropriate credit to the original author. For more details, please refer to the [LICENSE.md](https://github.com/fcardan/conventional-commits-pattern/blob/main/LICENSE.md) file.
