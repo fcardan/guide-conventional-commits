@@ -113,6 +113,39 @@ perf(rendering): reduce bundle size by 20%
 Issue: #456
 ```
 
+## 🔹 AI Commit Message Generator Prompt
+
+Use this prompt with DeepSeek's **"Search"** to generate standardized commit messages based on your code changes.
+
+### How to Use
+
+1. **Prepare Your Updates**  
+   Replace the bullet points under `UPDATE` with your actual changes (be specific).
+
+2. **Run in DeepSeek**  
+   - Open DeepSeek Chat
+   - Enable **"Search"** (web access)
+   - Paste this prompt:
+
+```text
+**UPDATE**:
+- Change 01
+- Change 02
+- Change 03
+
+**ACTION**:
+Analyze the repo [https://github.com/fcardan/guide-conventional-commits] and suggest
+ a **Conventional Commits**-formatted commit based on the updates above.
+Be concise and objective. Keep it under 50 characters.
+```
+
+### Expected Output
+
+After running the prompt, you’ll receive a commit suggestion like this:
+
+```text
+fix(xpath): correct node selection logic in PHP script
+```
 
 
 ## 🔹 References
