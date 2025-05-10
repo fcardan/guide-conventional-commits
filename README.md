@@ -128,15 +128,22 @@ Use this prompt with DeepSeek's **"Search"** to generate standardized commit mes
    - Paste this prompt:
 
 ```text
-**UPDATE**:
+CONTEXT:
+I need to generate a Conventional Commits-formatted commit message based on specific updates.
+
+OBJECTIVE:
+Suggest a concise message (<50 chars) reflecting the changes listed, following the format from guide-conventional-commits.
+
+OUTPUT FORMAT:
+<type>(<optional scope>): <brief description>
+
+UPDATES:
 - Change 01
 - Change 02
 - Change 03
 
-**ACTION**:
-Analyze the repo [https://github.com/fcardan/guide-conventional-commits] and suggest
- a **Conventional Commits**-formatted commit based on the updates above.
-Be concise and objective. Keep it under 50 characters.
+TASK:
+Analyze the reference repo [https://github.com/fcardan/guide-conventional-commits] and propose the most suitable commit message. Prioritize relevance (e.g., feat, fix, docs, chore), Brevity (strictly under 50 characters).
 ```
 
 ### Expected Output
