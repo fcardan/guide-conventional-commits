@@ -128,22 +128,85 @@ Use this prompt with DeepSeek's **"Search"** to generate standardized commit mes
    - Paste this prompt:
 
 ```text
+INSTRUCTIONS:
+1. Change Analysis  
+   - Identify dominant theme (e.g., docs/feat/fix)  
+   - Group related changes under same scope  
+
+2. Type Selection  
+   - Priority: `fix` > `feat` > `docs` > `chore`  
+   - Use `refactor` only for non-functional code reorganization  
+
+3. Formatting Rules  
+   - English descriptions only  
+   - Omit articles (a/an/the) and final punctuation  
+   
+4. Version Assessment (Apply SemVer rules):
+   - BREAKING CHANGE → Major (X+1.0.0)
+   - feat → Minor (0.X+1.0)
+   - fix → Patch (0.0.X+1)
+
+REASONING STEPS
+1. List all changes from UPDATES  
+2. Categorize by type/impact  
+3. Determine if scope adds essential context  
+4. Draft 3 message options  
+5. Validate against:  
+   - [x] Brevity (<50 chars)  
+   - [x] Conventional Commits compliance  
+
+OUTPUT FORMAT 
+<type>(<scope>): <concise_description>  
+NEW_VERSION: <new_version> (if applicable)  
+
+Golden Rule:
+"If you remove (scope), does the message still make sense?"
+
+EXAMPLES
+
+Example 1 (docs + scope):
+
+CURRENT_VERSION: 1.4.2  
+Updates:
+- Update compatibility table in README
+- Fix broken installation links
+
+Output:
+docs(readme): update compatibility table & fix links  
+
+Example 2 (fix without scope):
+
+CURRENT_VERSION: 1.4.2  
+Updates:
+- Resolve NaN error in calculate_yield
+- Add timezone validation
+
+Output:
+fix: handle NaN values in yield calculation  
+NEW_VERSION: 1.5.0 
+
+FINAL STRUCTIONS:
+
+Think step-by-step:
+
+- What's the primary impact of changes?
+- Which type best communicates this to maintainers?
+- How to simplify without losing essential context?
+
 CONTEXT:
-I need to generate a Conventional Commits-formatted commit message based on specific updates.
+Target repo: {your repo here}
+Reference standard: https://github.com/fcardan/guide-conventional-commits
 
-OBJECTIVE:
-Suggest a concise message (<50 chars) reflecting the changes listed, following the format from guide-conventional-commits.
+EXECUTE WITH: 
 
-OUTPUT FORMAT:
-<type>(<optional scope>): <brief description>
+CURRENT_VERSION: {semver}
+CONTEXT: {Describe task context}  
+UPDATES:  
+- {Change 1}  
+- {Change 2}  
+- {Change 3}  
 
-UPDATES:
-- Change 01
-- Change 02
-- Change 03
-
-TASK:
-Analyze the reference repo [https://github.com/fcardan/guide-conventional-commits] and propose the most suitable commit message. Prioritize relevance (e.g., feat, fix, docs, chore), Brevity (strictly under 50 characters).
+Generate Conventional Commits message:
 ```
 
 ### Expected Output
